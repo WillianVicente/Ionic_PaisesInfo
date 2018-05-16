@@ -21,8 +21,7 @@ export class HomePage {
     this.regioes = [p1,p2,p3,p4,p5,p6];
   }
 
-  openAddPage(regiao:Regiao):void {
-    this.navCtrl.push(ListPaisesPage, {regiaoSelecionada: regiao})
+  openAddPage(regiao: Regiao){
+      this.navCtrl.push(ListPaisesPage, {paisSelecionado: regiao})
   }
-
 }

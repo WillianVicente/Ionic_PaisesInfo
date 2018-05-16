@@ -15,8 +15,13 @@ export class ListPaisesPage {
   public regiao : Regiao;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.regiao = this.navParams.get("regiaoSelecionada");
-
+    try {
+      this.regiao = this.navParams.get('paisSelecionado');
+    }catch(e){
+      console.log(e);
+      
+    }
+    
     let p1 = {nome:'Brazil', regiao:'america'};
     let p2 = {nome:'Argentina', regiao:'america'};
     this.paises = [p1,p2];
@@ -24,7 +29,7 @@ export class ListPaisesPage {
 
   irParaDetalhes(pais:Pais):void{
     this.navCtrl.push(DetalhesPage, {paisSelecionado: pais});
-    }
+  }
     
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPaisesPage');

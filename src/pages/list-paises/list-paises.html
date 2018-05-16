@@ -7,16 +7,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-center>Lista dos Paises</ion-title>
+    <ion-title>Lista dos Paises</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-list >
+  <ion-row text-center>
+    <ion-col>
+      <h2>{{regiao.nome}}</h2>
+      <ion-list>
         <ion-item *ngFor="let pais of paises" (click)="irParaDetalhes(pais)">
-        <h2>{{pais.nome}}</h2>
+          <h2>{{pais.nome}}</h2>
         </ion-item>
-       </ion-list>
+      </ion-list>
+    </ion-col>
+  </ion-row>
 </ion-content>
